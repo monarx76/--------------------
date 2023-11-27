@@ -1,9 +1,5 @@
-import { Typography } from '@mui/material'
+import HomePage from '@/components/pages/HomePage/HomePage'
 
 export default function page() {
-	return (
-		<>
-			<Typography className='text-2xl'>Привет</Typography>
-		</>
-	)
+	return <HomePage />
 }

@@ -5,6 +5,7 @@ import Image, { StaticImageData } from 'next/image'
 import { Dispatch, FC, SetStateAction, useState } from 'react'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import Link from 'next/link'
 
 interface ImageSliderProps {
 	images: (string | StaticImageData)[]
@@ -31,14 +32,16 @@ const ImageSlider: FC<ImageSliderProps> = ({
 			{images.map((image, index) => (
 				<Box key={index}>
 					{currentImg === index && (
-						<Image
-							src={image}
-							className={'rounded-[20px] w-[500px] h-[500px]'}
-							alt={''}
-							width={384}
-							height={384}
-							quality={100}
-						/>
+						<Link href={`${index}`}>
+							<Image
+								src={image}
+								className={'rounded-[20px] w-[500px] h-[500px]'}
+								alt={''}
+								width={384}
+								height={384}
+								quality={100}
+							/>
+						</Link>
 					)}
 				</Box>
 			))}
